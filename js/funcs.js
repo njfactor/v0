@@ -1,5 +1,5 @@
 //Constructor for product class
-function product(var dName,var pdId,var price,var dtMfg,var dtExp)
+function product(dName,pdId,price,dtMfg,dtExp)
 {   
     this.SrNo=sessionStorage.getItem('top')+1;
 	sessionStorage.setItem('top',top);
@@ -31,7 +31,7 @@ function remove_object()
 //to splice the information
 function splitter(var qty)
 {
-	var info=sessionStorage.getItem('qrcode');//code string is retrieved from the browser
+	var info=qrcode;//code string is retrieved from the browser
 
 	details=info.split(",");
 
@@ -91,13 +91,13 @@ function addEntry()
  }
  //end
 
-function convert(var price)
+function convert(price)
 {
 	return parseInt(price);
 }
 
 
-  function calc(var price,var qty)
+  function calc(price,qty)
 {
 	return price*qty;
 }  

@@ -58,7 +58,7 @@ var app = {
 
         scanner.scan( function (result) { 
 		
-			sessionStorage.setItem('qrcode',result.text);
+		qrcode = result.text;
 			
             alert("We got a barcode\n" + 
             "Result: " + result.text);  
