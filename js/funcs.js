@@ -29,9 +29,9 @@ function remove_object()
 
 
 //to splice the information
-function splitter(var qty)
+function splitter(qty)
 {
-	var info=qrcode;//code string is retrieved from the browser
+	var info=getElementById('rawCode').value;//code string is retrieved from the browser
 
 	details=info.split(",");
 
@@ -42,7 +42,7 @@ function splitter(var qty)
 
 
 //function to create an object
-function create_object(var dname,var pdid,var price,var dtmfg,var dtexp,var qty)
+function create_object(dname,pdid,price,dtmfg,dtexp,qty)
 { 
 	price=convert(price);
 

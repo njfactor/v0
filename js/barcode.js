@@ -67,6 +67,7 @@ var app = {
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("rawCode").innerHTML = result.text;
+			splitter(1);
             console.log(result);
             /*
             if (args.format == "QR_CODE") {
