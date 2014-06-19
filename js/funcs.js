@@ -1,8 +1,7 @@
 //Constructor for product class
 function product(dName,pdId,price,dtMfg,dtExp)
 {   
-    this.SrNo=sessionStorage.getItem('top')+1;
-	sessionStorage.setItem('top',top);
+    this.SrNo=top+1;
 	this.Name = pdName;
 	this.Id = pdId;
 	this.Price = price;
@@ -14,8 +13,6 @@ function product(dName,pdId,price,dtMfg,dtExp)
 function remove_object()
 {
 	var index=this.SrNo-1;
-	
-	cart=session.getItem('temp_cart');
 
 	var temp_arr_start=cart.splice(0,index);
 	var temp_arr_end=cart.splice(index+1,cart.length-1);
@@ -23,7 +20,6 @@ function remove_object()
 	temp_arr_start.pop();
 
 	cart=temp_arr_start.concat(temp_arr_end);
-	session.setItem('temp_cart',cart);
 }
 //end
 
@@ -46,16 +42,12 @@ function create_object(dname,pdid,price,dtmfg,dtexp,qty)
 { 
 	price=convert(price);
 
-	var total_price=sessionStorage.getItem('total');
-	
 	total_price+=calc(price,qty);//total to be paid
-	sessionStorage.setItem('total',total_price);
 
 	var tempprod=new product(dName,pdid,price,dtmfg,dtexp);
 	
-	cart=sessionStorage.getItem('temp_cart');
+
 	cart.push(tempprod);
-	sessionStorage.setItem('temp_cart',cart);
 }
 //end
 
@@ -73,21 +65,18 @@ function addEntry()
 	var data3 = row.insertCell(3);
 	var data4= row.insertCell(4);
 	var data5= row.insertCell(5);
- 
-	top = sessionStorage.getItem('top');
-	cart = sessionStorage.getItem('temp_cart');
-	
+ 	
 	data0.innerHTML = rowCount;
 	data1.innerHTML = cart[top].Name;
 	data2.innerHTML = cart[top].Id;
 	data3.innerHTML = cart[top].Price;
 	data4.innerHTML = cart[top].Mfg;
  
-	var btn = data5.createElement["BUTTON"];
+	/* var btn = data5.createElement["BUTTON"];
 	var t =data5.createTextNode("Delete this item");
 	
 	btn.appendChild(t);
-	data5.body.appendChild(btn);
+	data5.body.appendChild(btn); */
  }
  //end
 
@@ -106,13 +95,10 @@ function remove_object()
 {
 	var index=this.SrNo-1;
 
-	cart=session.getItem('temp_cart');
-
 	var temp_arr_start=cart.splice(0,index);
 	var temp_arr_end=cart.splice(index+1,cart.length-1);
 
 	temp_arr_start.pop();
 
 	cart=temp_arr_start.concat(temp_arr_end);
-	session.setItem('temp_cart',cart);
 }

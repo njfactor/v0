@@ -33,7 +33,7 @@ different parameters.-->
 	<script type="text/javascript" src="js/barcode.js"></script>
 	<script type="text/javascript">app.initialize();</script>
 
-<table  style="border-collapse: collapse">
+<table  id="myTable" style="border-collapse: collapse">
 	<thead>
 		<tr style="border-bottom: 2px solid black">
 			<th colspan="5"> Billing Cart </th>
@@ -52,6 +52,15 @@ different parameters.-->
 <script>
 var qrcode;
 var details=[];//temporary array to hold the info properties in string form 
+
+var total_price=0;//total to be paid
+
+
+var cart=[];//array of objects;
+
+
+var top=0;//the last item in the cart array
+
 </script>
 </body>
 </html>
